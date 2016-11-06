@@ -1,0 +1,38 @@
+#!/bin/sh
+
+if [ "$#" -eq 0 ]
+then
+echo "**************************************************************************************************"
+echo "\t\tSORTING"
+echo "1.Selection Sort"
+echo "2.Bubble Sort"
+echo "3.Insertion Sort"
+echo "4.Heap Sort"
+echo "**************************************************************************************************"
+else
+        echo "title=\"Comparing SORTS\"\ntitle_x=\"No. of terms\"\ntitle_y=\"Execution time\"\n" > SORT_TIME
+        for var in "$@"
+                do
+                if [ "$var" -eq 1 ]
+                        then
+                        gcc selection_sort.c -o selection_sort
+                        ./selection_sort
+                elif [ "$var" -eq 2 ]
+                        then
+                        gcc bubble_sort.c -o bubble_sort
+                        ./bubble_sort
+                
+                elif [ "$var" -eq 3 ]
+                        then
+                        gcc insertion_sort.c -o insertion_sort
+                        ./insertion_sort
+                
+                elif [ "$var" -eq 4 ]
+                        then
+                        gcc heap_sort.c -o heap_sort
+                        ./heap_sort
+                fi
+                done
+
+        xgraph SORT_TIME
+fi

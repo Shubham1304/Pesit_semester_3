@@ -1,0 +1,8 @@
+set title "Fibonacci Comparisions"
+set xlabel "No. of Terms"
+set ylabel "Execution time"
+set grid
+
+
+plot 'FIB_MEM' with lines title "Memoization" lw 3, \
+     'FIB_REC' with lines title "Recursion" lw 3

@@ -1,0 +1,9 @@
+set title "Comparing Sorts"
+set xlabel "No. of values"
+set ylabel "Execution time"
+set grid
+
+plot 'BST_SORT' with lines lw 2 title "Binary Search Tree Sort", \
+'SELECTION_SORT' with lines lw 2 title "Selection sort", \
+'BUBBLE_SORT' with lines lw 2 title "Bubble sort", \
+'INSERTION_SORT' with lines lw 2 title "Insertion sort"
